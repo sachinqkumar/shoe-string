@@ -94,7 +94,7 @@ exports.searchNearByPets = (req, res, next) => {
                     }
                 ],
                 function (err, results) {
-                    User.populate(
+                    PetOwner.populate(
                         results, { path: 'ownerId', model: 'PetOwner', select: 'name email mobile' },
                         function (err, nearByOwners) {
                             if (err) {
